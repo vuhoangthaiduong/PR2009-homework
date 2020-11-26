@@ -24,28 +24,28 @@ end
 
 class Zoo
     def initialize
-        @@all_animals = Array.new
+        @all_animals = Array.new
     end
     
     def add_animal animal
-        @@all_animals << animal
+        @all_animals << animal
     end
 
     def add_animals animals
-        @@all_animals.concat(animals)
+        @all_animals.concat(animals)
     end
 
     def remove_animal index
-        @@all_animals.delete_at(index)
+        @all_animals.delete_at(index)
     end
 
     def remove_all_animals
-        @@all_animals = []
+        @all_animals = []
     end
 
     def show_all_animals
-        for i in 0..(@@all_animals.length - 1)
-            puts @@all_animals[i].say_hello
+        @all_animals.each do |ani|
+            puts ani.say_hello()
         end
     end
 end
